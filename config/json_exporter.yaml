@@ -1,0 +1,23 @@
+groups:
+  - name: group1
+    json_source: "C:/Practice/airflow/Airflow-Dag_manager/config/group1.json"
+    metrics:
+      - name: employee_age
+        json_path: $.employees[*].age
+        labels:
+          department: 'IT'
+          index: 'dept-level'  # Index of the employee in the JSON array
+      - name: employee_salary
+        json_path: $.employees[*].salary
+        labels:
+          department: 'IT'
+          index: 'emp-level'  # Index of the employee in the JSON array
+
+  - name: group2
+    json_source: "C:/Practice/airflow/Airflow-Dag_manager/config/group2.json"
+    metrics:
+      - name: sales_total
+        json_path: $.employees[*].sales
+        labels:
+          region: 'North'
+          index: 'region-level'  # Index of the employee in the JSON array

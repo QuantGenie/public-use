@@ -1,0 +1,13 @@
+[Unit]
+Description=JSON Exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python /path/to/app.py --config-url /path/to/config.yaml --target-host localhost --target-port 8000
+WorkingDirectory=/path/to
+User=your_username
+Group=your_group
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
